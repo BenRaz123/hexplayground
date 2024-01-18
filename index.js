@@ -26,7 +26,7 @@ const handler = (e) => {
 
 const setFavicon = () => {
     const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    let link = document.head.appendChild('link');
+    let link = document.createElement('link');
     link.rel = "icon";
     
     if (isDark) {
@@ -34,6 +34,8 @@ const setFavicon = () => {
     } else {
         link.href = "./favicon-light.png";
     }
+    document.head.appendChild(link);
+
 }
 
 setFavicon();
