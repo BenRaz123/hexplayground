@@ -1,3 +1,19 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --sub_color: #aaa;
+        --text_color: white;
+        --bg-color: #111;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --sub_color: black;
+        --text_color: black;
+        --bg-color: white;
+    }
+}
+
 body {
     display:flex;
     align-items:center;
@@ -8,9 +24,11 @@ body {
 * {
     font-size: 2rem;
     font-family: monospace;
+    color: var(--text_color)
 }
 
 input {
+    background: none;
     padding: 0rem;
     width: auto;
     outline:none;
@@ -22,7 +40,7 @@ input {
 }
 
 #text-input {
-    background-color: white;
+    background-color: var(--bg-color);
     padding: 1rem 2rem;
     border-radius: 1rem;
     filter: drop-shadow(0px 0px 10px #0004)
@@ -30,4 +48,5 @@ input {
 
 .unselectable {
     user-select: none;
+    color: var(--sub_color)
 }
