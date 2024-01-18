@@ -19,16 +19,23 @@ const randint = (max) => {
 
 const handler = (e) => {
     const val = e.target.value;
-    const width = e.target.value.length + 1;
+    const width = e.target.value.length;
+    if (width === 0) {
+        input.style.width = "6ch";
+        // Apologies for the reprehensible use of a global variable                   
+        document.body.style.backgroundColor = `#${startingColor}`;
+        //                                        ^^^^^^^^^^^^^ This sucks
+        return;
+    }
+    input.style.width = `${width + 0.5}ch`;
     document.body.style.backgroundColor = `#${val}`;
-    input.style.width = `${width}ch`;
 }
 
 const setFavicon = () => {
     const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     let link = document.createElement('link');
     link.rel = "icon";
-    
+
     if (isDark) {
         link.href = "./favicon-dark.png";
     } else {
@@ -40,7 +47,7 @@ const setFavicon = () => {
 
 setFavicon();
 
-const startingColor = randomHexColor(); 
+const startingColor = randomHexColor();
 
 input.setAttribute("placeholder", startingColor);
 document.body.style.backgroundColor = `#${startingColor}`;
