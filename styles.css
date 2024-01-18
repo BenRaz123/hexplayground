@@ -3,6 +3,7 @@
         --sub_color: #aaa;
         --text_color: white;
         --bg-color: #111;
+        --shadow-color: #9994
     }
 }
 
@@ -11,6 +12,7 @@
         --sub_color: black;
         --text_color: black;
         --bg-color: white;
+        --shadow-color: #0004
     }
 }
 
@@ -43,7 +45,7 @@ input {
     background-color: var(--bg-color);
     padding: 1rem 2rem;
     border-radius: 1rem;
-    filter: drop-shadow(0px 0px 10px #0004)
+    filter: drop-shadow(0px 0px 10px var(--shadow-color))
 }
 
 .unselectable {
