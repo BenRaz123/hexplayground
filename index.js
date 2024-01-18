@@ -24,6 +24,20 @@ const handler = (e) => {
     input.style.width = `${width}ch`;
 }
 
+const setFavicon = () => {
+    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    let link = document.head.appendChild('link');
+    link.rel = "icon";
+    
+    if (isDark) {
+        link.href = "./favicon-dark.png";
+    } else {
+        link.href = "./favicon-light.png";
+    }
+}
+
+setFavicon();
+
 const startingColor = randomHexColor(); 
 
 input.setAttribute("placeholder", startingColor);
