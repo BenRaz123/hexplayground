@@ -35,7 +35,6 @@ const getColorUrlParam = () => {
         b = b > 16 ? b.toString(16) : `0${b.toString(16)}`;
         return `${r}${g}${b}`;
     }
-    console.log(myParam);
 }
 
 const handler = (e) => {
