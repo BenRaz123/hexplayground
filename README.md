@@ -15,5 +15,3 @@ The default behavior when hexplayground is opened is to show a random color. Thi
 ### Example:
 
 This link: <https://benraz.dev/hexplayground?color=black> will always start on black no matter what.
-
-<iframe src="https://benraz.dev/hexplayground?color=black" title="Example"></iframe>
